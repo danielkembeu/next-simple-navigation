@@ -1,40 +1,38 @@
-"use client";
+"use client"; // This directive turns the component into a client component.
 
-import { productsList } from "@/data";
-import Link from "next/link";
+import { BackButtonLink } from "@/components/BackButtonLink";
+import { useFindProductById } from "@/hooks/products/useFindProductById";
 import { useParams } from "next/navigation";
-import React, { useState } from "react";
 
 export default function SingleProduct() {
-  const params = useParams<{ id: string }>();
-  const [match, setMatch] = useState<any>(null);
+  const params = useParams<{ id: string }>(); // Get the product's ID from the url parameter.
 
-  React.useEffect(() => {
-    const product = productsList.find(
-      (product) => product.id === parseInt(params.id)
+  // Custom hook to use find product by its ID and returns both the product (if found) and the error object (if not found).
+  const { product, error } = useFindProductById(parseInt(params.id, 10));
+
+  // Checking if we really have a product found.
+  if (!product) {
+    return (
+      <div className="h-screen flex flex-col items-center justify-center">
+        {/* Displays the error message in case the product is not found. */}
+        <div className="text-2xl font-medium">😖 {error}</div>
+
+        {/* Render the back button in case of an error */}
+        <BackButtonLink href="/products" />
+      </div>
     );
-    setMatch(product);
-  }, []);
-
-  if (!match) {
-    return <div>Product not found</div>;
   }
 
+  // When the product is found, the UI displays properly
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      {match && (
-        <div>
-          <h1 className="text-4xl font-bold mb-3">{match.name}</h1>
-          <p className="text-gray-500 font-medium text-xl">${match.price}</p>
-        </div>
-      )}
+      <div>
+        <h1 className="text-4xl font-bold mb-3">{product.name}</h1>
+        <p className="text-gray-500 font-medium text-xl">${product.price}</p>
+      </div>
 
-      <Link
-        className="px-8 py-2 bg-gray-600 rounded-full mt-10 w-52 flex items-center justify-center text-white font-bold active:opacity-85 hover:opacity-90"
-        href="/products"
-      >
-        Go back
-      </Link>
+      {/* Displays a back button to '/products' with a custom button text */}
+      <BackButtonLink href="/products" customText="See all products" />
     </div>
   );
 }

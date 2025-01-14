@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Nextjs Demo
 
-## Getting Started
+## Description
 
-First, run the development server:
+Just a project to make somebody to learn something about React and Nextjs that you struggle with.
+@Vannelle
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Navigation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Using the `Link` component
+- Using the `Dynamic Route` for products, located in the `/products/single-product/[id]`
+- Using the `useParams` hook from `next/link` to retrieve the URL parameter, like the product ID.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Design Patterns
 
-## Learn More
+- Reusable Components
+- Using the `SRP (Single Responsibility Principle)`
+- Using `Props` with `Props' types`
+- Using `Custom hook` to add shareable functionality accross the components.
 
-To learn more about Next.js, take a look at the following resources:
+### Core: Nextjs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Using `Client components` by marking them with the `use client` directive, in the `SingleProduct component`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Styling
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Using `Tailwind CSS` to style my components
+- Adaptable styles for both `light` and `dark` modes.

@@ -1,4 +1,16 @@
-export const productsList = [
+/**
+ * Dummy data source to test.
+ * export the productsList variable to be used by the other files.
+ * It's an array of type: { id: number, name: string, price: number }
+ */
+
+export type Product = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+export const productsList: Product[] = [
   {
     id: 1,
     name: "Product 1",
