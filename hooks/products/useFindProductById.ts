@@ -15,7 +15,7 @@ export function useFindProductById(productId: number) {
     if (productFound) {
       setProduct(productFound); // update the state if the product was found
     } else {
-      setError("Product does not exist"); // else set the error message
+      setError(`Product of id "${productId}" does not exist`); // else set the error message
     }
   }, [productId]); // whenever the productId changes, the useEffect is triggered.
 

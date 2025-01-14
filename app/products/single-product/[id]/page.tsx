@@ -1,4 +1,5 @@
 "use client"; // This directive turns the component into a client component.
+// Without it you can't use hooks for example.
 
 import { BackButtonLink } from "@/components/BackButtonLink";
 import { useFindProductById } from "@/hooks/products/useFindProductById";

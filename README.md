@@ -28,3 +28,7 @@ Just a project to make somebody to learn something about React and Nextjs that y
 
 - Using `Tailwind CSS` to style my components
 - Adaptable styles for both `light` and `dark` modes.
+
+### Dummy datas
+
+- Located in the `data.ts` file, at the root of the project.
