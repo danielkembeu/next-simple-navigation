@@ -1,5 +1,6 @@
 import { productsList } from "@/data";
 import { ProductCardLink } from "@/components/ProductCardLink";
+import { ButtonLink } from "@/components/ButtonLink";
 
 // Page component.
 /**
@@ -10,14 +11,14 @@ export default function Products() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
       <div className="w-[20%] p-3">
-        <h1 className="text-5xl font-bold mb-10">Products Page</h1>
+        <ButtonLink href="/" withIcon />
+        <h1 className="text-5xl font-bold my-10">Products Page</h1>
         <div className="text-gray-600 dark:text-gray-300">
           <p className="text-xl font-medium mb-3">
             Welcome to the products page.
           </p>
           <p>Here you can find all the products.</p>
           <p>Feel free to explore the other sections of the site.</p>
-          <p>Good luck!</p>
         </div>
       </div>
 

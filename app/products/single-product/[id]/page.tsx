@@ -1,7 +1,7 @@
 "use client"; // This directive turns the component into a client component.
 // Without it you can't use hooks for example.
 
-import { BackButtonLink } from "@/components/BackButtonLink";
+import { ButtonLink } from "@/components/ButtonLink";
 import { useFindProductById } from "@/hooks/products/useFindProductById";
 import { useParams } from "next/navigation";
 
@@ -19,7 +19,7 @@ export default function SingleProduct() {
         <div className="text-2xl font-medium">😖 {error}</div>
 
         {/* Render the back button in case of an error */}
-        <BackButtonLink href="/products" />
+        <ButtonLink href="/products" />
       </div>
     );
   }
@@ -33,7 +33,7 @@ export default function SingleProduct() {
       </div>
 
       {/* Displays a back button to '/products' with a custom button text */}
-      <BackButtonLink href="/products" customText="See all products" />
+      <ButtonLink href="/products" customText="See all products" />
     </div>
   );
 }
