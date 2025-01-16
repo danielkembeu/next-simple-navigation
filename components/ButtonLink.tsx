@@ -1,7 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import React from "react";
 
-// BackButtonLink type extends the `LinkProps` from 'next/link'.
+// ButtonLink type extends the `LinkProps` from 'next/link'.
 // It ensures that the BackButtonLink has the same props as the "Link" component.
 // It has an additional props which is optional (not required): customText, that sets the text of the button.
 type ButtonLinkProps = LinkProps & {
