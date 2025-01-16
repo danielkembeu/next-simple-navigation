@@ -6,10 +6,10 @@ import { useFindProductById } from "@/hooks/products/useFindProductById";
 import { useParams } from "next/navigation";
 
 export default function SingleProduct() {
-  const params = useParams<{ id: string }>(); // Get the product's ID from the url parameter.
+  const { id } = useParams<{ id: string }>(); // Get the product's ID from the url parameter.
 
   // Custom hook to use find product by its ID and returns both the product (if found) and the error object (if not found).
-  const { product, error } = useFindProductById(parseInt(params.id, 10));
+  const { product, error } = useFindProductById(+id);
 
   // Checking if we really have a product found.
   if (!product) {

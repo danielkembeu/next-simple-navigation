@@ -12,6 +12,7 @@ export function useFindProductById(productId: number) {
   // Finding the matching product in the list of products.
   useEffect(() => {
     const productFound = productsList.find((p) => p.id === productId);
+    
     if (productFound) {
       setProduct(productFound); // update the state if the product was found
     } else {
