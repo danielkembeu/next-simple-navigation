@@ -10,7 +10,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 export default function Products() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
-      <div className="w-[20%] p-3">
+      <div>
         <ButtonLink href="/" withIcon />
         <h1 className="text-5xl font-bold my-10">Products Page</h1>
         <div className="text-gray-600 dark:text-gray-300">
